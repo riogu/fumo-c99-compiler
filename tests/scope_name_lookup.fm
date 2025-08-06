@@ -182,3 +182,13 @@ t(
 "    local.var.y = 10;\n"
 "}\n"
 ,pass),
+
+t(
+"fn func() -> void;\n"
+"fn func() -> void {}\n"
+"fn func() -> void;\n"
+"struct gaming;\n"
+"struct gaming{};\n"
+"struct gaming;\n"
+"struct gaming;\n"
+, pass),
