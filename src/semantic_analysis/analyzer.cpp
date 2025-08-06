@@ -288,10 +288,12 @@ void Analyzer::add_declaration(ASTNode& node) {
             if (t_decl.kind != type_decl.kind || symbol_tree.namespace_decls.contains(id.mangled_name)) {
                 report_error(node.source_token, "Redefinition of '{}' as a different kind of symbol.", id.mangled_name);
             }
+
             if (!was_inserted) {
                 if (type_decl.definition_body) {
                     if (t_decl.definition_body) report_error(node.source_token, "Redefinition of '{}'.", id.mangled_name);
                     t_decl.definition_body = type_decl.definition_body;
+
                 } else {
                     type_decl.definition_body = t_decl.definition_body;
                 }

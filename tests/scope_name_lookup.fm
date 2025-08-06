@@ -166,6 +166,7 @@ t(
 , pass),
 
 t(
+
 "struct foo {\n"
 "    struct bar {let y = 23;};\n"
 "\n"
@@ -181,9 +182,11 @@ t(
 "    let local = foo{12, foo::bar{3}};\n"
 "    local.var.y = 10;\n"
 "}\n"
+
 ,pass),
 
 t(
+
 "fn func() -> void;\n"
 "fn func() -> void {}\n"
 "fn func() -> void;\n"
@@ -191,4 +194,5 @@ t(
 "struct gaming{};\n"
 "struct gaming;\n"
 "struct gaming;\n"
+
 , pass),
